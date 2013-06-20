@@ -1,4 +1,7 @@
 ruby_fundamentals
 =================
 
-Data structures and algorithms in Ruby
+Data structures:
+
+1. Linked List
+2. Heap

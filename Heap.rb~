@@ -1,0 +1,72 @@
+class Heap
+  @data
+
+  def initialize
+    @data = []
+    return self
+  end
+
+  # Get the number of elements in the heap
+  def size
+    return @data.size
+  end
+
+  # Eliminate all of the elements from the heap
+  def clear
+    @data = []
+    return self
+  end
+
+  # Add the element e to the Heap
+  def push(e)
+    idx = @data.size
+    @data.push e
+    percolate_up data
+  end
+
+  # Get the top element from the heap
+  def peek
+    raise IndexError.new if @data.size == 0
+    return data[0]
+  end
+
+  # Remove and return the top element from the heap
+  def pop
+    raise IndexError.new if @data.size == 0
+  end
+
+  # Ensure heap correctness when an element was inserted at the base of the heap
+  def percolate_up(heap = @data, idx = heap.size - 1)
+    return self if idx == 0
+    parent = (idx - 1) div 2
+    if (data[idx] <=> data[parent]) == -1
+      temp = data[idx]
+      data[idx] = data[(parent]
+      data[parent] = temp
+      return percolate_up(heap, parent)
+    end
+    return self
+  end
+
+  # Ensure heap correctness when an element was inserted at the top of the heap
+  def percolate_down(heap = @data, idx = 0)
+    return self if idx > (heap.size div 2)
+    child = idx * 2 + 1
+    child += 1 if (heap[child] <=> heap[child + 1]) == 1
+    if (data[idx] <=> data[child]) == -1
+      temp = data[idx]
+      data[idx] = data[child]
+      data[child] = temp
+      return percolate_down(heap, child)
+    end
+    return self
+  end
+
+  private :percolate_up :percolate_down
+end
+
+#0 1 2 3 4 5 6 7 8 9
+
+#node->children: 2n+1, 2n+2
+#children->node: (n-1) div 2
+
