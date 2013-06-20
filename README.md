@@ -1,19 +1,16 @@
 Data Structures:
 
 1. Linked List
-2. Array
-3. Stack
-4. Queue
-5. Heap
-6. Binary Search Tree
-7. AVL Tree
-8. Red Black Tree
-9. B Tree
-10. Hash: Linear Probing
-11. Hash: Quadratic Probing
-12. Hash: Chaining
-13. Trie
-14. Splay Tree
+2. Heap
+3. Binary Search Tree
+4. AVL Tree
+5. Red Black Tree
+6. B Tree
+7. Hash: Linear Probing
+8. Hash: Quadratic Probing
+9. Hash: Chaining
+10. Trie
+11. Splay Tree
 
 Algorithm:
 
