@@ -12,7 +12,7 @@ class Heap
   end
 
   # Eliminate all of the elements from the heap
-  def clear
+  def clear!
     @data = []
     return self
   end
@@ -41,9 +41,8 @@ class Heap
   end
 
   # Turn an array into a heap
-  def heapify(array)
+  def heapify!(array)
     @data = array
-    puts "array: " + array.to_s
     (0..(@data.size / 2 - 1)).to_a.reverse.each { |i| percolate_down i }
     return self
   end
@@ -65,7 +64,6 @@ class Heap
 
   # Ensure heap correctness when an element was inserted at the top of the heap
   def percolate_down(idx = 0)
-    puts "idx: " + idx.to_s + ", @data: " + @data.to_s
     return self if idx > (@data.size / 2 - 1)
     child = idx * 2 + 1
     child += 1 if (child != @data.size - 1) && (@data[child] > @data[child + 1])
